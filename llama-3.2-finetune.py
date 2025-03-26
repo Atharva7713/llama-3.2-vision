@@ -20,7 +20,7 @@ from peft import (
 )
 from huggingface_hub import login
 
-login("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")
+login("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") # this is the access token from hugging to access the llama model 
 
 # Disable SDPA Flash Attention to avoid unpacking error
 torch.backends.cuda.enable_mem_efficient_sdp(False)
@@ -133,7 +133,7 @@ data_collator = DataCollatorForLanguageModeling(tokenizer=tokenizer, mlm=False)
 training_args = TrainingArguments(
     output_dir=OUTPUT_DIR,
     overwrite_output_dir=True,
-    num_train_epochs=5,
+    num_train_epochs=5,           # change the epochs here if required
     per_device_train_batch_size=2,  # Reduced from 4 to help with memory
     gradient_accumulation_steps=8,
     save_steps=500,
