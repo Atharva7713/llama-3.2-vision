@@ -22,7 +22,7 @@ from huggingface_hub import login
 
 login("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") # this is the access token from hugging to access the llama model 
 
-# Disable SDPA Flash Attention to avoid unpacking error
+# Disable SDPA Flash Attention to avoid unpacking error (you can remove if you have high gpu)
 torch.backends.cuda.enable_mem_efficient_sdp(False)
 torch.backends.cuda.enable_flash_sdp(False)  # Add this line to fully disable flash attention
 
