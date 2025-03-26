@@ -28,7 +28,9 @@ torch.backends.cuda.enable_flash_sdp(False)  # Add this line to fully disable fl
 
 MODEL_NAME = "meta-llama/Llama-3.2-11B-Vision"
 OUTPUT_DIR = "./llama-3.2-fine-tuned-new"
-DATASET_PATH = "./updated_train_data (1).jsonl"   # to change the location simply remove the previous file path and write the new path but everything should only have forward slash in complete path
+DATASET_PATH = "./updated_train_data (1).jsonl"   # to change the location simply remove the previous file path and write the new path but everything should only have forward slash in complete path.
+
+# example: if path is this C:\Users\user\Desktop\data_preperation\llama-3.2-finetune-model.jsonl change it like this C:/Users/user/Desktop/data_preperation/llama-3.2-finetune-model.jsonl
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 print(f"Using device: {device}")
